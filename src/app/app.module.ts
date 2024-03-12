@@ -11,6 +11,9 @@ import { UserListComponent } from './header/admin/user-list/user-list.component'
 import { HeroComponent } from './header/home/hero/hero.component';
 import { SidebarComponent } from './header/home/sidebar/sidebar.component';
 import { SubscribeService } from './Services/subscribe.service';
+import { FormsModule } from '@angular/forms';
+import { UserService } from './Services/User.service';
+import { LoggerService } from './Services/logger.service';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,11 @@ import { SubscribeService } from './Services/subscribe.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
 
-  providers:[SubscribeService],
+  providers:[SubscribeService,UserService,LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
